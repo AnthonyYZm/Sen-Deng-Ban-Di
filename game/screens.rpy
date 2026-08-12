@@ -340,30 +340,170 @@ style navigation_button_text:
 ##
 ## https://doc.renpy.cn/zh-CN/screen_special.html#main-menu
 
+## 标题界面角色依次登场。四张原始立绘尺寸不同，因此在这里分别校准缩放与落脚点。
+transform sen_menu_zhuoyuan_in:
+    xanchor 0.5
+    yanchor 1.0
+    xpos 290
+    ypos 1095
+    zoom 0.86
+    xoffset -260
+    alpha 0.0
+    pause 0.2
+    easeout 0.65 xoffset 0 alpha 1.0
+    ease 0.20 ypos 1080
+
+transform sen_menu_gaoruihang_in:
+    xanchor 0.5
+    yanchor 1.0
+    xpos 690
+    ypos 1100
+    zoom 0.70
+    yoffset 220
+    alpha 0.0
+    pause 0.5
+    easeout 0.65 yoffset 0 alpha 1.0
+    ease 0.20 ypos 1080
+
+transform sen_menu_qiutian_in:
+    xanchor 0.5
+    yanchor 1.0
+    xpos 1135
+    ypos 1095
+    zoom 0.63
+    xoffset 230
+    alpha 0.0
+    pause 0.8
+    easeout 0.65 xoffset 0 alpha 1.0
+    ease 0.20 ypos 1080
+
+transform sen_menu_haozhang_in:
+    xanchor 0.5
+    yanchor 1.0
+    xpos 1610
+    ypos 1090
+    zoom 0.72
+    xoffset 280
+    alpha 0.0
+    pause 1.1
+    easeout 0.65 xoffset 0 alpha 1.0
+    ease 0.20 ypos 1080
+
+## 四人登场后，标题和菜单从画面下方整体弹出。
+transform sen_menu_ui_in:
+    alpha 0.0
+    yoffset 120
+    pause 1.4
+    easeout 0.55 alpha 1.0 yoffset 0
+
+transform sen_menu_title_in:
+    alpha 0.0
+    yoffset -40
+    pause 2.65
+    easeout 0.55 alpha 1.0 yoffset 0
+
+transform sen_menu_line_in:
+    alpha 0.0
+    xzoom 0.0
+    xanchor 0.5
+    pause 2.45
+    easeout 0.65 alpha 1.0 xzoom 1.0
+
 screen main_menu():
 
     ## 此语句可确保替换掉任何其他菜单屏幕。
     tag menu
 
-    add gui.main_menu_background
+    ## 原创和风视觉小说式背景：暖粉底色、斜向色块和细金线。
+    add Solid("#f4dce6")
+    add Solid("#fff8f3b8"):
+        xpos -160
+        ypos -120
+        xsize 820
+        ysize 1420
+        rotate -12
+    add Solid("#e9b7c985"):
+        xpos 1370
+        ypos -150
+        xsize 700
+        ysize 1450
+        rotate 10
+    add Solid("#fffdf8a6"):
+        xpos 0
+        ypos 755
+        xsize 1920
+        ysize 325
 
-    ## 此空框可使标题菜单变暗。
-    frame:
-        style "main_menu_frame"
+    ## 先后登场的四名角色。
+    add "images/zhuoyuan.png" at sen_menu_zhuoyuan_in
+    add "images/gaoruihang.png" at sen_menu_gaoruihang_in
+    add "images/qiutian.png" at sen_menu_qiutian_in
+    add "images/hao1.png" at sen_menu_haozhang_in
 
-    ## use 语句将其他的屏幕包含进此屏幕。标题屏幕的实际内容在导航屏幕中。
-    use navigation
+    ## 角色与菜单之间的半透明雾面层，让文字在复杂立绘前保持清晰。
+    add Solid("#fffaf3df"):
+        xpos 0
+        ypos 790
+        xsize 1920
+        ysize 290
+        at sen_menu_ui_in
+
+    add Solid("#c66f91"):
+        xpos 960
+        ypos 786
+        xsize 1840
+        ysize 3
+        at sen_menu_line_in
 
     if gui.show_name:
-
         vbox:
-            style "main_menu_vbox"
+            xpos 960
+            ypos 800
+            xanchor 0.5
+            yanchor 1.0
+            spacing -4
+            at sen_menu_title_in
 
             text "[config.name!t]":
-                style "main_menu_title"
+                style "sen_main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+            text "MAGIC × CODE × CAMPUS":
+                style "sen_main_menu_subtitle"
+
+    ## 四名角色完成登场后，菜单按钮从底部弹出。
+    fixed:
+        xpos 0
+        ypos 815
+        xsize 1920
+        ysize 265
+        at sen_menu_ui_in
+
+        hbox:
+            xalign 0.5
+            ypos 34
+            spacing 18
+
+            textbutton _("开始游戏") action Start() style "sen_main_menu_button"
+            textbutton _("读取游戏") action ShowMenu("load") style "sen_main_menu_button"
+            textbutton _("设置") action ShowMenu("preferences") style "sen_main_menu_button"
+            textbutton _("关于") action ShowMenu("about") style "sen_main_menu_button"
+
+            if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+                textbutton _("帮助") action ShowMenu("help") style "sen_main_menu_button"
+
+            if renpy.variant("pc"):
+                textbutton _("退出") action Quit(confirm=False) style "sen_main_menu_button"
+
+        text "— SEN DENG BAN DI —":
+            style "sen_main_menu_footer"
+            xalign 0.5
+            ypos 137
+
+        text "v[config.version]":
+            style "sen_main_menu_version"
+            xpos 1870
+            ypos 205
+            xanchor 1.0
 
 
 style main_menu_frame is empty
@@ -393,6 +533,51 @@ style main_menu_title:
 
 style main_menu_version:
     properties gui.text_properties("version")
+
+
+## 新标题菜单使用独立样式，不改变游戏内导航菜单的外观。
+style sen_main_menu_button is button:
+    xsize 230
+    ysize 70
+    xpadding 18
+    ypadding 10
+    background Solid("#fffdf5d9")
+    hover_background Solid("#c96f92ee")
+    insensitive_background Solid("#eee3e3aa")
+
+style sen_main_menu_button_text is button_text:
+    font gui.interface_text_font
+    size 30
+    color "#713b53"
+    hover_color "#ffffff"
+    insensitive_color "#9b8c91"
+    xalign 0.5
+    yalign 0.5
+
+style sen_main_menu_title is text:
+    font gui.interface_text_font
+    size 68
+    color "#763a55"
+    xalign 0.5
+    outlines [(2, "#fffaf5", 0, 0)]
+
+style sen_main_menu_subtitle is text:
+    font gui.interface_text_font
+    size 19
+    color "#b76586"
+    xalign 0.5
+    kerning 4
+
+style sen_main_menu_footer is text:
+    font gui.interface_text_font
+    size 19
+    color "#a25b78"
+    kerning 3
+
+style sen_main_menu_version is text:
+    font gui.interface_text_font
+    size 18
+    color "#9a7886"
 
 
 ## 游戏菜单屏幕 ######################################################################

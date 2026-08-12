@@ -58,7 +58,7 @@ define config.has_voice = True
 ## 持续播放，直至音乐停止或其他文件开始播放。
 
 # define config.main_menu_music = "main-menu-theme.ogg"
-
+define config.main_menu_music = "audio/yljy.mp3"
 
 ## 转场 ##########################################################################
 ##
