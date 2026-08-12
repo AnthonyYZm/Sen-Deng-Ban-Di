@@ -7,6 +7,7 @@ define qiutian = Character("秋天")
 define gaoruihang = Character("睾锐夯")
 define yiyigao = Character("义义皋")
 
+
 image zhuoyuan:
     "images/zhuoyuan.png"
     xanchor 0.5
@@ -25,7 +26,22 @@ image gaoruihang_sprite:
 image yiyigao_sprite:
     "images/yiyigao.jpg"
     xanchor 0.5
-    yanchor 1.0
+    yanchor 0.5
+
+image qiutian:
+    "images/qiutian.png"
+    xanchor 0.5
+    yanchor 0.5
+
+image bedra:
+    "images/bedra.png"
+    xanchor 0.5
+    yanchor 0.5
+
+image caren:
+    "images/Caren.png"
+    xanchor 0.5
+    yanchor 0.5   
 
 label start:
 
@@ -192,11 +208,17 @@ label classover:
 
     scene toilet
 
+    show bedra:
+        xpos 960
+        ypos 1250     
+
     "就在这时，那团光直接冲向空中，竟化为了一个人形，看上去是一个中年女性，身材比较瘦小。这时何茁圆也从半空中掉了下来。"
 
     turtle "这，这是什么啊！"
 
     "突然，敌人一个健步向我冲了过来，手上竟凭空搓出一团黑色的代码魔法球，直向我的头上呼过来。我吓得缩成一团，啊啊啊的叫了出来。"
+
+    hide bedra
 
     "“砰！”"
 
@@ -218,20 +240,43 @@ label classover:
 
     zhuoyuan "碧阳的，没蓝了！为什么偏偏是这个时候……昨晚熬夜写代码忘记回蓝了吗？！"
 
+    hide zhuoyuan
+
+    show bedra:
+        xpos 960
+        ypos 1250    
+
     "只见敌人这时也爬了起来，向我们走来:“哼哼，就凭你，也想阻止我们的计划！还有旁边这个是哪冒出来的小鬼，今天就连你一起收拾！”"
+
+    hide bedra
+
+    show zhuoyuan:
+        xpos 960
+        ypos 650
 
     zhuoyuan "可恶……难道要结束了吗……"
 
     turtle "呜啊，我只是个路过的，我不想死啊！"
 
+    hide zhuoyuan
+
+    show bedra:
+        xpos 960
+        ypos 1250
+
     enemy "给我受死吧！"
 
-    hide zhuoyuan
 
     "敌人挥起双手，巨大的黑色魔法球正在成型。就在这绝望时刻，后方突然传来一阵急促的脚步声。就在这时，后方突然传来一阵脚步。"
 
+    hide bedra
+
+    show bedra:
+        xpos 1500
+        ypos 1250
+
     show hao1:
-        xpos 960
+        xpos 350
         ypos 650
 
     haozhang "快住手！你们在干什么！"
@@ -244,29 +289,20 @@ label classover:
 
     "听到好帐的声音，正准备放大招的敌人突然僵住了。她缓缓转头看向好帐，原本凶狠的脸上竟然泛起了一丝诡异的红晕。"
     
-    hide hao1
-
     enemy "为……为什么……你会在这里……"
 
-    show hao1:
-        xpos 960
-        ypos 650
-
     haozhang "哈？我认识你吗？大妈你谁啊？？"
-
-    hide hao1
 
     enemy "算了，今天算你们走运！下次我一定要收拾掉你，何茁圆！"
 
     "敌人一挥衣服，身体化作一串乱码，竟直接消失了。"
 
-    show hao1:
-        xpos 960
-        ypos 650
 
     haozhang "啊啊啊啊，这是什么魔术！"
 
     hide hao1
+    
+    hide bedra
 
     "我赶紧爬起来，扶起旁边的何茁圆，“快跑吧！出去你要好好给我们解释一下这是怎么回事！”"
 
@@ -300,7 +336,9 @@ label classover:
 
     hide hao1
 
-    show zhuoyuan
+    show zhuoyuan:
+        xpos 960
+        ypos 650
 
     zhuoyuan "那是Caren手下的一名干部，Bedra。而那个程序员炒面，正式他们为研制魔法所部下的结界。至于为什么她看到你就走了，我也不是很清楚。"
 
@@ -342,128 +380,14 @@ label classover:
             jump route_safehouse
 
 
+
+
 label route_dorm:
 
-    scene canteen
-
-    "夜色从食堂的玻璃门渗进来，路灯一盏盏亮在校园里。"
-
-    show zhuoyuan:
-        xpos 960
-        ypos 650
-
-    zhuoyuan "走吧，先回你宿舍。"
-
-    turtle "回我宿舍干嘛？你刚才不是说……"
-
-    zhuoyuan "当然是贴身保护你啊。包括晚上睡觉。"
-
-    turtle "等、等一下！你一个女生，跑男生宿舍过夜，真的没问题吗？"
-
-    zhuoyuan "现在的问题是世界会不会出事，不是你会不会被通报批评。"
-
-    zhuoyuan "而且——你们学院还有更专业的人在看着你呢。"
-
-    turtle "更专业的人？"
-
-    scene dorm
-
-    "男生宿舍楼下，昏黄的路灯把地面切成一块块光斑。门禁旁不知何时多了一道笔直的身影。"
-
-    qiutian "邓大然。"
-
-    turtle "啊，在、在。我没逃课。"
-
-    zhuoyuan "秋天学姐，你就不能先夸我今天打退了一个干部吗？"
-
-    qiutian "你带他回来的速度，比我预想的快一点。"
-
-    "原来……这就是她们嘴里说的‘更专业的人’。高冷的、带班的、说话冷冰冰的学姐——秋天。"
-
-    qiutian "战斗报告明天交给学生会特别行动组。现在，执行防护方案一：临时合宿。"
-
-    turtle "合、合宿？"
-
-    zhuoyuan "赞成！我早就说要跟邓大然一起睡了，很安全的那种！"
-
-    turtle "你说得好像哪里不安全过一样……"
-
-    qiutian "别想歪。你已经与不明魔力产生过接触，今晚必须有两名战斗人员在同一空间内，以便应对紧急情况。"
-
-    qiutian "简单说，你不能一个人睡。"
-
-    "如果不是气氛太严肃，我可能会因为这句话脸红。"
-
-    "走廊里门牌一行行掠过，最后停在‘计科 203’。"
-
-    turtle "就是这里，比较乱，别介意……"
-
-    zhuoyuan "哇，好有生活气息！"
-
-    qiutian "像数据结构考前一晚的教室垃圾桶。"
-
-    turtle "学姐能不能在比喻里给我留一点面子……"
-
-    qiutian "床位三张，你的、好帐的，还有一个空床。你睡上铺，我和何茁圆下铺对面。监护范围刚好。"
-
-    zhuoyuan "诶？我不是可以和邓大然——"
-
-    qiutian "不符合任何一条安全条例。"
-
-    "就这样，我的人生第一次‘和两位女生一起过夜’，发生在一间闷热的四人间宿舍里。没有海边，没有温泉，只有吱呀作响的铁床和偶尔飘来的泡面味。"
-
-    "我爬上上铺，抱着枕头，脑子里还在转：魔法阵、女巫、秋天学姐、临时合宿……"
-
-    zhuoyuan "啊，我好像忘记带正式睡衣了。"
-
-    qiutian "你带了什么？"
-
-    turtle "那个……如果半夜被宿管阿姨瞥一眼，我们宿舍会直接上热搜……"
-
-    qiutian "穿这个。"
-
-    "秋天从包里扔给何茁圆一件宽松的深色运动外套。"
-
-    zhuoyuan "哇，秋天学姐的衣服，感觉好正式……"
-
-    "灯关掉，只剩窗外路灯透进来的微弱光线。"
-
-    turtle "那个……秋天学姐。你到底是学生会的，还是跟何茁圆一样的魔法使？"
-
-    qiutian "我是本院信息安全小组负责人，也是特别行动组的临时队长。你可以理解为——负责发现问题、处理事故、掩盖真相的那个人。"
-
-    turtle "听起来，好像幕后黑手啊。"
-
-    zhuoyuan "是吧是吧，我第一次见到秋天学姐的时候也这么想。"
-
-    qiutian "再多一句无意义的评价，明天的体能训练加倍。"
-
-    zhuoyuan "……收到。"
-
-    turtle "那，‘黑暗势力’具体是什么？真的能毁灭世界吗？"
-
-    qiutian "从技术指标上来说，他们还不具备毁灭世界的条件。目前阶段，只能毁掉几座城市的网络和能源系统。"
-
-    turtle "这种程度就‘只’了吗？！"
-
-    qiutian "但如果他们把魔法阵和现实世界的网络结构完全融合，情况就难说了。"
-
-    qiutian "你今天能把魔法阵从何茁圆身上扯下来，不是偶然。"
-
-    "那一刻，宿舍里突然安静下来。我第一次意识到，自己好像不是纯粹的路人甲。"
-
-    "门外走廊里，有人影掠过，脚步轻得像故意不让里面的人听见。"
-
-    gaoruihang "邓大然……居然被秋天抓去‘保护’了啊。"
-
-    gaoruihang "真好奇，他到底有什么特别的地方。"
-
-    "门缝下，一道微不可察的细小光线流过，像有人在做什么实验。"
-
-    gaoruihang "明天上课，见个面吧。——隔壁班，同专业，睾锐夯报到。"
-
-    jump chapter2
-
+    menu:
+        "先回宿舍——把电脑和材料收好，遇事也好跑路。":
+            jump route_safehouse
+        
 
 label route_safehouse:
 
@@ -495,7 +419,7 @@ label route_safehouse:
 
     show gaoruihang_sprite:
         xpos 960
-        ypos 650
+        ypos 800
     
 
     "校门口路灯下，一个身姿笔直的女生靠在栏杆旁，长发束起，表情冷淡。"
@@ -518,7 +442,7 @@ label route_safehouse:
 
     show gaoruihang_sprite:
         xpos 960
-        ypos 650
+        ypos 800
 
     gaoruihang "任务失败，暴露平民，按规扣分。"
 
@@ -544,7 +468,7 @@ label route_safehouse:
 
     show gaoruihang_sprite:
         xpos 960
-        ypos 650
+        ypos 800
 
     gaoruihang "按战力排班，你值白班，我值夜班。"
 
@@ -566,7 +490,7 @@ label route_safehouse:
 
     show gaoruihang_sprite:
         xpos 960
-        ypos 650
+        ypos 800
 
     gaoruihang "屏蔽魔法信号，普通监控拍不到内部，邓迪克找不到。"
 
@@ -588,7 +512,7 @@ label route_safehouse:
     
     show gaoruihang_sprite:
         xpos 960
-        ypos 650
+        ypos 800
 
     gaoruihang "干什么？你以为这里是你家客厅啊？"\
 
@@ -604,7 +528,7 @@ label route_safehouse:
 
     show gaoruihang_sprite:
         xpos 960
-        ypos 650
+        ypos 800
 
     gaoruihang "现在开始这里是组织的安全屋！你要遵守纪律！"
 
@@ -626,7 +550,7 @@ label route_safehouse:
 
     show gaoruihang_sprite:
         xpos 960
-        ypos 650
+        ypos 800
 
     gaoruihang "从技术指标上来说，他们还不具备毁灭世界的条件。目前阶段，只能毁掉几座城市的网络和能源系统。"
 
@@ -663,7 +587,7 @@ label chapter2:
 
     show gaoruihang_sprite:
         xpos 1500
-        ypos 650
+        ypos 800
 
     turtle "什么啊，我根本没选这节课……"
 
@@ -692,7 +616,7 @@ label chapter2:
 
     show yiyigao_sprite:
         xpos 960
-        ypos 1080
+        ypos 540
 
     yiyigao "好了，人应该差不多到齐了。"
     yiyigao "我们开始上课。"
@@ -713,7 +637,7 @@ label chapter2:
 
     show gaoruihang_sprite:
         xpos 1500
-        ypos 650
+        ypos 800
     gaoruihang "继续观察。"
 
     yiyigao "在正式开始今天的内容之前，大家先扫一下签到码。"
@@ -795,7 +719,7 @@ label chapter2:
 
     yiyigao "很简单。"
     yiyigao "运行我上传到课程平台的程序，按照要求完成测试，然后把生成的数据文件提交上来。"
-    yiyigao "占总成绩 30%。"
+    yiyigao "占总成绩 30\%。"
 
     turtle "……"
 
@@ -809,11 +733,11 @@ label chapter2:
 
     zhuoyuan "她在利用学生收集某种数据……这根本不是普通的 Coursework。"
 
-    turtle "但它占 30%。"
+    turtle "但它占 30\%。"
 
     zhuoyuan "都什么时候了你还在想成绩？"
 
-    turtle "因为 30% 真的很多。"
+    turtle "因为 30\% 真的很多。"
 
     "下课铃响起。"
 
@@ -886,7 +810,7 @@ label chapter2:
 
     show yiyigao_sprite:
         xpos 960
-        ypos 1080
+        ypos 540
 
     "义义皋移动鼠标，屏幕中央出现一串信息。"
     "姓名：邓大然"
@@ -911,5 +835,377 @@ label chapter2:
 
     "画面渐暗。"
     "第二章结束。"
+
+    jump chapter3
+
+
+label chapter3:
+
+    scene dorm
+
+    "第三章：何茁圆同学，请写事故报告"
+
+    "第二天早晨，安全屋客厅。桌上散落着昨天从课程平台下载下来的文件。何茁圆趴在沙发上，一脸生无可恋。"
+
+    show zhuoyuan:
+        xpos 500
+        ypos 650
+
+    "昨晚回来以后，何茁圆花了两个小时研究那个签到程序。"
+    "研究成果有两个。"
+    "第一，程序确实有问题。"
+    "第二，她的手机彻底开不了机了。"
+
+    turtle "所以你昨晚修好了吗？"
+
+    zhuoyuan "没有。"
+
+    turtle "那你为什么还研究到三点？"
+
+    zhuoyuan "因为我觉得再试一次就能成功。"
+
+    show gaoruihang_sprite:
+        xpos 1450
+        ypos 800
+
+    gaoruihang "你上一次也是这么说的。"
+
+    zhuoyuan "科学探索总要付出一点代价嘛。"
+
+    "就在这时，门外传来敲门声。"
+    "咚咚咚。"
+
+    zhuoyuan "谁啊？"
+
+    "门外传来一个平静的声音：秋天。"
+
+    "何茁圆脸上的笑容瞬间消失了。"
+
+    zhuoyuan "……完了。"
+
+    "房门打开。一名金色长发的女生站在门口，手里拿着文件夹，神情平静。"
+
+    show zhuoyuan:
+        xpos 350
+        ypos 650
+
+    show qiutian:
+        xpos 960
+        ypos 800
+
+    show gaoruihang_sprite:
+        xpos 1570
+        ypos 800
+
+    qiutian "早。"
+
+    gaoruihang "早。"
+
+    turtle "学、学姐好。"
+
+    "秋天看了我一眼，点点头。随后，她的视线落到何茁圆身上。"
+
+    qiutian "何茁圆。"
+
+    zhuoyuan "在。"
+
+    qiutian "昨天是谁在没有确认术式结构的情况下，擅自向目标注入魔力？"
+
+    zhuoyuan "……"
+
+    qiutian "是谁？"
+
+    zhuoyuan "我。"
+
+    qiutian "很好。"
+
+    "她从文件夹里抽出几张纸，递给何茁圆。"
+
+    qiutian "事故报告。"
+
+    "何茁圆接过来，看了一眼。"
+
+    zhuoyuan "怎么还有三页？"
+
+    qiutian "因为你干的事情不止一件。"
+
+    zhuoyuan "……"
+
+    "何茁圆趴在桌边填写报告。秋天坐到电脑前，睾锐夯站在旁边。"
+
+    qiutian "昨天的签到程序呢？"
+
+    gaoruihang "已经备份。"
+
+    turtle "她手机坏了还能备份？"
+
+    gaoruihang "在她把手机弄坏之前我就备份了。"
+
+    zhuoyuan "你是不是早就知道我要碰？"
+
+    gaoruihang "嗯。"
+
+    zhuoyuan "那你怎么不拦我？"
+
+    gaoruihang "拦了。"
+
+    zhuoyuan "……"
+
+    qiutian "安静写。"
+
+    zhuoyuan "哦。"
+
+    "秋天打开程序。屏幕上很快出现大量看不懂的数据。"
+    "我站在旁边看了一会儿。"
+
+    turtle "所以这到底是什么？"
+
+    qiutian "表面上是一个普通的数据采集程序。"
+    qiutian "但里面混入了一套魔力采集结构。"
+
+    zhuoyuan "我昨天就说了！"
+
+    qiutian "继续写。"
+
+    zhuoyuan "哦。"
+
+    "秋天继续翻看文件。"
+
+    qiutian "它会在学生运行程序的时候，记录一部分意识和魔力反应。"
+
+    turtle "意识？"
+
+    gaoruihang "暂时可以理解成一种个人反应数据。"
+
+    turtle "听起来就不像正常作业。"
+
+    zhuoyuan "当然不正常。谁家 Coursework 偷偷收这个啊？"
+
+    turtle "有些软件也偷偷收数据。"
+
+    "何茁圆愣了一下。"
+
+    zhuoyuan "……好像也是。"
+
+    qiutian "重点不是这个。"
+
+    "她调出一条网络记录。"
+
+    qiutian "这些数据没有留在课程服务器。"
+    qiutian "它们被转发到了另一个地方。"
+
+    "电脑屏幕上出现校园地图，一个位置被标记出来。"
+
+    gaoruihang "学院实验楼？"
+
+    qiutian "地下区域。"
+
+    "何茁圆放下笔，凑了过来。"
+
+    zhuoyuan "我就知道义义皋有问题。"
+
+    qiutian "目前只能证明她的课程系统和那个地方有关。"
+
+    zhuoyuan "那还等什么？今晚进去看看。"
+
+    qiutian "不行。"
+
+    zhuoyuan "为什么？"
+
+    qiutian "我们不知道里面有什么。"
+
+    zhuoyuan "进去不就知道了？"
+
+    "秋天沉默了两秒。"
+
+    qiutian "这就是你今天为什么在写事故报告。"
+
+    "何茁圆低头继续写。"
+
+    zhuoyuan "好吧……"
+
+    turtle "其实我觉得学姐说得有道理。"
+
+    zhuoyuan "你站哪边的？"
+
+    turtle "安全的那边。"
+
+    "秋天把地图放大。"
+
+    qiutian "不过不能放着不管。"
+
+    "何茁圆抬起头。"
+
+    qiutian "今晚先去外围确认情况。"
+
+    "何茁圆眼睛一下亮了起来。"
+
+    zhuoyuan "那不还是要去吗？"
+
+    qiutian "外围。"
+
+    zhuoyuan "懂了。"
+
+    qiutian "你最好真的懂。"
+
+    gaoruihang "邓大然怎么办？"
+
+    turtle "我觉得我可以待在这里。"
+
+    "三个人同时看向我。"
+
+    turtle "……不行？"
+
+    qiutian "你已经连续两次出现在邓迪克的行动里。"
+    qiutian "现在单独留下反而更危险。"
+
+    turtle "所以为了保护我——"
+    turtle "你们决定带我去调查敌人的实验室？"
+
+    qiutian "目前看来，是。"
+
+    turtle "这保护方案是不是哪里有问题？"
+
+    "没人回答我。"
+
+    "傍晚，几人准备离开安全屋。何茁圆背着包，明显已经恢复了精神。"
+
+    gaoruihang "通讯设备。"
+
+    zhuoyuan "带了。"
+
+    qiutian "备用魔力石。"
+
+    zhuoyuan "带了。"
+
+    qiutian "手机呢？"
+
+    "何茁圆沉默。秋天看向桌上那台黑屏的手机。"
+
+    zhuoyuan "这个属于不可抗力。"
+
+    qiutian "写进事故报告。"
+
+    zhuoyuan "这也要写？"
+
+    qiutian "要。"
+
+    "我背上书包。"
+
+    turtle "我最后确认一下。"
+    turtle "我们只是去看看，对吧？"
+
+    qiutian "对。"
+
+    zhuoyuan "如果没人发现的话。"
+
+    turtle "后半句能不能不说？"
+
+    scene lab_building
+
+    "夜晚的学院实验楼。大部分楼层已经熄灯，只有地下入口附近亮着微弱的灯光。"
+
+    "晚上十点。"
+    "正常的大学生现在一般只有两个去处。"
+    "宿舍。"
+    "或者图书馆。"
+    "而我站在实验楼后门，准备跟三个魔法少女调查一个疑似邪恶组织据点的地下实验室。"
+    "我开始怀疑自己最近是不是有点太适应这种生活了。"
+
+    show zhuoyuan:
+        xpos 960
+        ypos 650
+
+    zhuoyuan "就是这里。"
+
+    show gaoruihang_sprite:
+        xpos 1570
+        ypos 800
+
+
+    "睾锐夯检查了一下门锁。"
+
+    gaoruihang "刷卡进入。"
+
+    zhuoyuan "我可以试试破解——"
+
+    show qiutian:
+        xpos 350
+        ypos 620
+        zoom 0.6
+
+    qiutian "不许碰。"
+
+    zhuoyuan "我还什么都没说呢。"
+
+    qiutian "我知道你要说什么。"
+
+    "我看向旁边。"
+
+    turtle "那我们怎么进去？"
+
+    "睾锐夯伸手拉了一下旁边的窗户。窗户开了。"
+    "众人沉默。"
+
+    gaoruihang "没锁。"
+
+    zhuoyuan "……"
+
+    qiutian "进去。"
+
+    scene lab
+
+    "昏暗的地下走廊。墙壁两边排列着关闭的实验室，远处传来机器运行的低沉声音。"
+
+    show zhuoyuan:
+        xpos 960
+        ypos 650
+
+    show qiutian:
+        xpos 350
+        ypos 620
+        zoom 0.6
+
+    show gaoruihang_sprite:
+        xpos 1570
+        ypos 800
+
+    turtle "这里晚上怎么还有机器在响？"
+
+    zhuoyuan "前面有很强的魔力反应。"
+
+    qiutian "不要靠太近。"
+
+    "几人继续向前。"
+    "走廊尽头，一扇门虚掩着。里面透出淡绿色的光。"
+    "何茁圆停下脚步。"
+
+    zhuoyuan "就是这里。"
+
+    qiutian "先观察。"
+
+    zhuoyuan "知道了。"
+
+    "短暂的安静。"
+
+    zhuoyuan "观察多久？"
+
+    qiutian "……"
+
+    "突然，房间里传来一阵机械声。紧接着，屏幕亮起。"
+    "上面不断闪过学生姓名、课程编号和大量实验数据。"
+
+    turtle "这些不是昨天签到的人吗？"
+
+    "秋天神情沉了下来。"
+
+    qiutian "看来我们找对地方了。"
+
+    hide zhuoyuan
+    hide qiutian
+    hide gaoruihang_sprite
+
+    "画面渐暗。"
+    "第三章结束。"
 
     return
