@@ -64,9 +64,26 @@ image caren:
     xanchor 0.5
     yanchor 0.5
 
+# 所有章节背景统一保持原始比例并铺满 1920×1080。
+# 比例不一致的图片会从画面边缘裁切，不会被拉伸变形。
+image canteen = Transform("images/canteen.png", xysize=(1920, 1080), fit="cover", xalign=0.5, yalign=0.5)
+image classroom = Transform("images/classroom.png", xysize=(1920, 1080), fit="cover", xalign=0.5, yalign=0.5)
+image dorm = Transform("images/dorm.png", xysize=(1920, 1080), fit="cover", xalign=0.5, yalign=0.5)
+image flat_day = Transform("images/flat_day.png", xysize=(1920, 1080), fit="cover", xalign=0.5, yalign=0.5)
+image flat_night = Transform("images/flat_night.png", xysize=(1920, 1080), fit="cover", xalign=0.5, yalign=0.5)
+image gate = Transform("images/gate.png", xysize=(1920, 1080), fit="cover", xalign=0.5, yalign=0.5)
+image lab_building = Transform("images/lab_building.jpg", xysize=(1920, 1080), fit="cover", xalign=0.5, yalign=0.5)
+image lab = Transform("images/lab.png", xysize=(1920, 1080), fit="cover", xalign=0.5, yalign=0.5)
+image lab_alarm = Transform("images/lab_alarm.png", xysize=(1920, 1080), fit="cover", xalign=0.5, yalign=0.5)
+image office = Transform("images/office.png", xysize=(1920, 1080), fit="cover", xalign=0.5, yalign=0.5)
+image restaurant = Transform("images/restaurant.png", xysize=(1920, 1080), fit="cover", xalign=0.5, yalign=0.5)
+image toilet = Transform("images/toilet.png", xysize=(1920, 1080), fit="cover", xalign=0.5, yalign=0.5)
+image toilet1 = Transform("images/toilet1.png", xysize=(1920, 1080), fit="cover", xalign=0.5, yalign=0.5)
+image toilet2 = Transform("images/toilet2.png", xysize=(1920, 1080), fit="cover", xalign=0.5, yalign=0.5)
+image ttk1 = Transform("images/ttk1.jpg", xysize=(1920, 1080), fit="cover", xalign=0.5, yalign=0.5)
+
 image dim_overlay = Solid("#000000")
 
 transform dim_in:
     alpha 0.0
     linear 1.0 alpha 1
-    

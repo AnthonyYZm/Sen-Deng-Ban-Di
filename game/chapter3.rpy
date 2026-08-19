@@ -368,4 +368,4 @@ label chapter3:
     show dim_overlay at dim_in zorder 100
     pause 1.5
 
-    return
+    jump chapter4
