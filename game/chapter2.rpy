@@ -46,8 +46,10 @@ label chapter2:
 
     turtle "她讲得还挺好的。"
 
+    hide yiyigao_sprite
+
     show zhuoyuan:
-        xpos 350
+        xpos 660
         ypos 650
 
     zhuoyuan "嘘。"
@@ -55,7 +57,7 @@ label chapter2:
     turtle "我们是不是找错人了？"
 
     show gaoruihang_sprite:
-        xpos 1500
+        xpos 1260
         ypos 800
     gaoruihang "继续观察。"
 
@@ -115,6 +117,18 @@ label chapter2:
     turtle "那谁给他们签的到？"
 
     "三个人同时沉默。"
+
+    show yiyigao_sprite:
+        xpos 960
+        ypos 540
+
+    show zhuoyuan:
+        xpos 350
+        ypos 650
+
+    show gaoruihang_sprite:
+        xpos 1500
+        ypos 800
 
     yiyigao "后排三位同学。"
 
