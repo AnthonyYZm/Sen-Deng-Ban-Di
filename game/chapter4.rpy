@@ -2,8 +2,6 @@ label chapter4:
 
     scene lab
 
-    "第四章：实验室里真的有实验"
-
     "地下实验室里没有开灯，只有几台显示器散发着淡绿色的光。机器运转的低鸣声不断从深处传来。"
 
     show qiutian:
@@ -161,21 +159,27 @@ label chapter4:
     "一个熟悉的声音从门口传来。"
     "确实不是。"
 
+    show yiyigao_sprite:
+        xpos 960
+        ypos 540
+
     "众人猛地回头。"
     "实验室入口处，义义皋站在那里。她手里依旧拿着平时上课使用的电脑包，神情十分平静。"
 
-    hide gaoruihang_sprite
-
     show qiutian:
-        xpos 300
+        xpos 260
         ypos 620
 
     show zhuoyuan:
-        xpos 780
+        xpos 660
         ypos 650
 
+    show gaoruihang_sprite:
+        xpos 1060
+        ypos 800
+
     show yiyigao_sprite:
-        xpos 1480
+        xpos 1560
         ypos 540
 
     yiyigao "我还在想，你们什么时候会找到这里。"
@@ -210,6 +214,14 @@ label chapter4:
 
     "没有人理我。"
 
+    show gaoruihang_sprite:
+        xpos 660
+        ypos 800
+
+    show zhuoyuan:
+        xpos 1060
+        ypos 650
+
     "何茁圆向前一步。"
 
     zhuoyuan "拿学生做这种实验，你还真说得出口。"
@@ -232,23 +244,28 @@ label chapter4:
 
     "已经来不及了。"
 
-    hide zhuoyuan
     hide qiutian
-    show zhuoyuan_fighting:
-        xpos 780
-        ypos 650
+    hide gaoruihang_sprite
+    hide zhuoyuan
 
-    "何茁圆双手亮起蓝色光芒。"
+    show zhuoyuan_fighting:
+        xpos 660
+        ypos 800
+
+    "何茁圆双手亮起紫色光芒。"
 
     zhuoyuan "Python——"
 
     "义义皋抬了一下手。"
     "下一秒。"
+
+    hide zhuoyuan_fighting
+
     "砰！"
 
     hide zhuoyuan_fighting
     show zhuoyuan_defeated:
-        xpos 760
+        xpos 660
         ypos 620
 
     "何茁圆整个人直接飞了出去，撞在旁边的桌子上，几张文件散落一地。"
@@ -273,7 +290,7 @@ label chapter4:
     "何茁圆咬牙，再次站起来。秋天挡到她前面。"
 
     show qiutian:
-        xpos 350
+        xpos 360
         ypos 620
 
     qiutian "别上了。"
@@ -289,15 +306,11 @@ label chapter4:
     hide zhuoyuan_defeated
 
     show gaoruihang_sprite:
-        xpos 780
+        xpos 860
         ypos 800
 
-    show qiutian:
-        xpos 300
-        ypos 620
-
     show yiyigao_sprite:
-        xpos 1480
+        xpos 1560
         ypos 540
 
     "秋天和睾锐夯同时进入战斗状态。"
@@ -385,7 +398,7 @@ label chapter4:
     hide zhuoyuan_damn
 
     show qiutian:
-        xpos 350
+        xpos 360
         ypos 620
 
     "秋天转头看向大门。"
@@ -434,7 +447,7 @@ label chapter4:
     "深夜，安全屋。几个人坐在客厅里，气氛比平时安静不少。"
 
     show zhuoyuan:
-        xpos 500
+        xpos 350
         ypos 620
 
     show qiutian:
@@ -442,7 +455,7 @@ label chapter4:
         ypos 620
 
     show gaoruihang_sprite:
-        xpos 1500
+        xpos 1520
         ypos 800
 
     "何茁圆坐在沙发上，脸上贴着创可贴。她明显还在为刚才的事情不爽。"
@@ -471,7 +484,7 @@ label chapter4:
 
     turtle "对了。"
 
-    "我从包里把那张纸拿出来。"
+    "我从包里把那叠纸拿出来。"
 
     turtle "我出来的时候捡到了这个。"
 
@@ -541,7 +554,5 @@ label chapter4:
 
     show dim_overlay at dim_in zorder 100
     pause 1.5
-
-    "第四章结束。"
 
     return

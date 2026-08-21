@@ -108,7 +108,7 @@ label chapter1:
         xpos 960
         ypos 650
 
-    zhuoyuan "终于能歇会儿了！刚才差点被 debra 打死。"
+    zhuoyuan "终于能歇会儿了！刚才差点被 Bedra 打死。"
 
     "何茁圆往沙发上一瘫，开始宽衣解带——脱下的丝袜随后飞到了我脸上。"
 

@@ -37,7 +37,8 @@ image gaoruihang_sprite:
     yanchor 0.5
 
 image yiyigao_sprite:
-    "images/yiyigao.jpg"
+    "images/yiyigao.png"
+    zoom 0.7
     xanchor 0.5
     yanchor 0.5
 
@@ -61,6 +62,11 @@ image bedra_nervous:
 
 image caren:
     "images/Caren.png"
+    xanchor 0.5
+    yanchor 0.5
+
+image qrcode:
+    "images/qrcode.jpg"
     xanchor 0.5
     yanchor 0.5
 

@@ -5,7 +5,7 @@ label chapter3:
     "第二天早晨，安全屋客厅。桌上散落着昨天从课程平台下载下来的文件。何茁圆趴在沙发上，一脸生无可恋。"
 
     show zhuoyuan:
-        xpos 500
+        xpos 660
         ypos 650
 
     "昨晚回来以后，何茁圆花了两个小时研究那个签到程序。"
@@ -22,7 +22,7 @@ label chapter3:
     zhuoyuan "因为我觉得再试一次就能成功。"
 
     show gaoruihang_sprite:
-        xpos 1450
+        xpos 1260
         ypos 800
 
     gaoruihang "你上一次也是这么说的。"
@@ -38,7 +38,7 @@ label chapter3:
 
     hide zhuoyuan
     show zhuoyuan_damn:
-        xpos 500
+        xpos 660
         ypos 650
 
     "何茁圆脸上的笑容瞬间消失了。"
@@ -229,6 +229,20 @@ label chapter3:
     turtle "这保护方案是不是哪里有问题？"
 
     "没人回答我。"
+
+    scene flat_night
+
+    show zhuoyuan:
+        xpos 350
+        ypos 650
+
+    show qiutian:
+        xpos 960
+        ypos 620
+
+    show gaoruihang_sprite:
+        xpos 1520
+        ypos 800
 
     "傍晚，几人准备离开安全屋。何茁圆背着包，明显已经恢复了精神。"
 

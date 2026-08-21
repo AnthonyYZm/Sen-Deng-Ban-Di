@@ -4,16 +4,16 @@ label chapter2:
 
     "上午的教室里，学生陆续进场。讲台上的投影仪已经打开，屏幕上显示着课程名称。"
 
-    show gaoruihang_sprite:
-        xpos 1500
-        ypos 800
-
     turtle "什么啊，我根本没选这节课……"
+
+    show gaoruihang_sprite:
+        xpos 1260
+        ypos 800
 
     gaoruihang "昨晚安全屋附近出现了一段异常魔力信号，最后指向了这门课的课程服务器。"
 
     show zhuoyuan:
-        xpos 960
+        xpos 660
         ypos 650
 
     zhuoyuan "所以我们来看看这个老师到底在搞什么鬼。"
@@ -61,11 +61,22 @@ label chapter2:
         ypos 800
     gaoruihang "继续观察。"
 
-    yiyigao "在正式开始今天的内容之前，大家先扫一下签到码。"
+    hide zhuoyuan
+    hide gaoruihang_sprite
+
+    show qrcode:
+        xpos 960
+        ypos 420
+
+    yiyigao "在继续讲下一部分的内容之前，大家先扫一下签到码。"
 
     "投影幕上出现了一个普通的二维码，周围的学生纷纷拿出手机。"
 
     turtle "终于有我会的东西了。"
+
+    show zhuoyuan:
+        xpos 560
+        ypos 650
 
     "我刚拿出手机，何茁圆突然按住了我的手。"
 
@@ -88,6 +99,10 @@ label chapter2:
     "何茁圆悄悄拿出手机，对着二维码检查。"
 
     zhuoyuan "很弱的术式……普通人应该感觉不到。"
+
+    show gaoruihang_sprite:
+        xpos 1260
+        ypos 800
 
     gaoruihang "功能？"
 
@@ -123,11 +138,11 @@ label chapter2:
         ypos 540
 
     show zhuoyuan:
-        xpos 350
+        xpos 360
         ypos 650
 
     show gaoruihang_sprite:
-        xpos 1500
+        xpos 1560
         ypos 800
 
     yiyigao "后排三位同学。"
@@ -137,6 +152,10 @@ label chapter2:
     yiyigao "上课期间不要讲话。"
 
     zhuoyuan "……好的老师。"
+
+    hide qrcode
+    hide zhuoyuan
+    hide gaoruihang_sprite
 
     "义义皋移开视线，继续讲课。"
 
@@ -156,6 +175,12 @@ label chapter2:
 
     turtle "……"
 
+    hide yiyigao_sprite
+
+    show zhuoyuan:
+        xpos 960
+        ypos 650
+
     zhuoyuan "这个程序有问题。"
 
     turtle "我也觉得有问题。"
@@ -173,6 +198,18 @@ label chapter2:
     turtle "因为 30\% 真的很多。"
 
     "下课铃响起。"
+
+    show qrcode:
+        xpos 960
+        ypos 420
+
+    show zhuoyuan:
+        xpos 560
+        ypos 650
+
+    show gaoruihang_sprite:
+        xpos 1260
+        ypos 800
 
     gaoruihang "已经确认异常，先回去分析数据。"
 
@@ -199,6 +236,18 @@ label chapter2:
 
     gaoruihang "回去再解释。"
 
+    show yiyigao_sprite:
+        xpos 960
+        ypos 540
+
+    show zhuoyuan:
+        xpos 360
+        ypos 650
+
+    show gaoruihang_sprite:
+        xpos 1560
+        ypos 800
+
     "就在这时，一道脚步声停在三人旁边。"
 
     yiyigao "何茁圆同学。"
@@ -218,6 +267,15 @@ label chapter2:
     zhuoyuan "好的老师……"
 
     hide yiyigao_sprite
+    hide qrcode
+
+    show zhuoyuan:
+        xpos 660
+        ypos 650
+
+    show gaoruihang_sprite:
+        xpos 1260
+        ypos 800
 
     "义义皋抱着电脑离开教室。"
 
@@ -236,14 +294,14 @@ label chapter2:
 
     scene office
 
+    show yiyigao_sprite:
+        xpos 960
+        ypos 540
+
     "教师办公室里，义义皋独自坐在电脑前，教室里的喧闹声已经消失。"
     "电脑屏幕上显示着一串不断更新的数据。"
     "实验样本：217"
     "异常样本：1"
-
-    show yiyigao_sprite:
-        xpos 960
-        ypos 540
 
     "义义皋移动鼠标，屏幕中央出现一串信息。"
     "姓名：邓大然"
